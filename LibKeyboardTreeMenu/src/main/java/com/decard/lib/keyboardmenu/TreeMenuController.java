@@ -13,6 +13,12 @@ public class TreeMenuController implements MenuOnKeyListener {
     private TreeMenu currentMenu;
     private boolean isMenuShowing;
 
+    public MenuStatusListener menuStatusListener;
+
+    public void setMenuStatusListener(MenuStatusListener menuStatusListener) {
+        this.menuStatusListener = menuStatusListener;
+    }
+
     public boolean isMenuShowing() {
         return isMenuShowing;
     }
@@ -40,6 +46,9 @@ public class TreeMenuController implements MenuOnKeyListener {
         if(rootMenu!=null){
             currentMenu = rootMenu;
             currentMenu.show();
+            if(menuStatusListener!=null){
+                menuStatusListener.onOpen();
+            }
         }
     }
 
@@ -48,6 +57,9 @@ public class TreeMenuController implements MenuOnKeyListener {
      */
     public void close(){
         setMenuShowing(false);
+        if(menuStatusListener!=null){
+            menuStatusListener.onClose();
+        }
     }
 
 

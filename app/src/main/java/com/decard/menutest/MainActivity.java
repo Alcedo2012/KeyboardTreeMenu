@@ -88,6 +88,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+//    @Override
+//    public boolean dispatchKeyEvent(KeyEvent event) {
+//        Log.d("dispatchKeyEvent",event.toString());
+//        return super.dispatchKeyEvent(event);
+//    }
+
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        Log.d("onKeyDown",event.toString());
+//        return super.onKeyDown(keyCode, event);
+//    }
+
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
 
